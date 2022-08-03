@@ -33,6 +33,12 @@ public class Menu : MonoBehaviour
         _islands.transform.DOMove(new Vector3(-46.8f, 0, 0),.25f);
     }
 
+    public void DistroySound()
+    {
+        SoundManager _music = FindObjectOfType<SoundManager>();
+        Destroy(_music.gameObject);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

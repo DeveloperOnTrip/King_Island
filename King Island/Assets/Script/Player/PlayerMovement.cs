@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Reference")]
     public Rigidbody2D _rb;
     public Animator _anim;
+    public AudioSource _audioSource;
 
     [Header("Ground Check")]
     public Transform _groundCheck;
@@ -16,17 +17,25 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     public float _moveSpeed = 10f;
+    //public AudioSource _runAudio;
     float _horizontal;
 
     [Header("Jump")]
     public float _jumpForce = 16f; // Jump power
     public float _holdJump = 0.5f; // if the player hold the jump button he will jump higher 
+    public AudioClip _jumpAudio;
     bool _isJumping = false;
 
     bool _isFacingRight = true;
 
     private void Update()
     {
+        /*if (_horizontal != 0 && !_runAudio.isPlaying)
+            _runAudio.Play();
+        else
+            _runAudio.Stop();
+        */
+
         Animations();
         //Flip the player when the player go right or left
         if (_horizontal > 0 && !_isFacingRight)
@@ -63,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpForce);
             _isJumping = true;
+            _audioSource.PlayOneShot(_jumpAudio, 1f);
         }
 
         if(context.canceled)
