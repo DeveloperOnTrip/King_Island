@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    int score;
+    [HideInInspector] public int score; 
 
     static ScoreKeeper instance;
 
@@ -36,7 +36,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         score += value;
         Mathf.Clamp(score, 0, int.MaxValue);
-        Debug.Log(score);
+        //Debug.Log(score);
     }
 
     public void ResetScore()

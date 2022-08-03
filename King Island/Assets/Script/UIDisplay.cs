@@ -15,6 +15,6 @@ public class UIDisplay : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = scoreKeeper.GetScore().ToString("0/16");
+        scoreText.text = scoreKeeper.GetScore().ToString("0/24");
     }
 }
