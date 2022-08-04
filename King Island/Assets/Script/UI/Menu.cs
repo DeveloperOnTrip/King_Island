@@ -8,6 +8,14 @@ public class Menu : MonoBehaviour
     public GameObject _island1Buttons;
     public GameObject _island2Buttons;
 
+
+    ScoreKeeper _scoreKeeper;
+
+    private void Awake()
+    {
+        _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -21,6 +29,12 @@ public class Menu : MonoBehaviour
     public void LoadmainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _scoreKeeper.score = 0;
     }
 
     public void GoIslandRight()

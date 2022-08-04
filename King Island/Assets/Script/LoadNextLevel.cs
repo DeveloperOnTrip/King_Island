@@ -7,6 +7,7 @@ public class LoadNextLevel : MonoBehaviour
 {
     public GameObject _find;
     public Transform _this;
+    public GameObject _restartButton;
     ScoreKeeper _scoreKeeper;
 
     void Awake()
@@ -21,6 +22,7 @@ public class LoadNextLevel : MonoBehaviour
         else if (_scoreKeeper.score <= 24)
         {
             Instantiate(_find,_this);
+            _restartButton.SetActive(true);
         }
         
     }
