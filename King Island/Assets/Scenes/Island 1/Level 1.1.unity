@@ -1065,6 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 726221781}
+  _outOfNum: 0/24
 --- !u!4 &349614495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6359462731567141949, guid: e7f826d99703ddd4697cf460098208f9, type: 3}
@@ -1878,6 +1879,8 @@ MonoBehaviour:
   _find: {fileID: 8498183574651531793, guid: 7a0ad6312b611bd49bd6a1d7eecfb9ac, type: 3}
   _this: {fileID: 321279576}
   _restartButton: {fileID: 1434956509}
+  _plusWhat: 1
+  _boxInlevel: 24
 --- !u!4 &647209280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6359462731567141949, guid: e7f826d99703ddd4697cf460098208f9, type: 3}
